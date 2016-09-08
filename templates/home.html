@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table class="table table-bordered">
+        <tr>
+            <th>序号</th>
+            <th>资产编号</th>
+            <th>名称</th>
+            <th>入账日期</th>
+            <th>部门</th>
+            <th>使用人</th>
+        </tr>
+        {% for asset in assets %}
+            <tr>
+            <td>{{ asset.id }}</td>
+{#                todo:添加详情连接#}
+{#            <td><a href="#">{{ asset }}</a></td>#}
+            <td><a href="{% url 'detail' fgdzc=asset.fgdzc %}">{{ asset.fgdzc }}</a></td>
+            <td>{{ asset.fname }}</td>
+            <td>{{ asset.fdate_rz }}</td>
+            <td>{{ asset.fdep }}</td>
+            <td>{{ asset.fuser }}</td>
+            </tr>
+
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+<tr>
+    <th>资产编号：</th><td>{{ asset }}</td>
+    <th>名称：</th><td>{{ asset.fname }}</td>
+    <th>入账日期：</th><td>{{ asset.fdate_rz }}</td>
+    <th>使用人：</th><td>{{ asset.fuser }}</td>
+</tr>
+</table>
+{% endblock %}

@@ -1,0 +1,1032 @@
+<dataSource name="MySQL - itassets@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="itassets">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema" />
+    <schema id="3" name="mysql" />
+    <schema id="4" name="performance_schema" />
+    <schema id="5" name="phpmyadmin">
+      <visible>1</visible>
+    </schema>
+    <schema id="6" name="sys" />
+    <schema id="7" name="demo" />
+    <schema id="8" name="wx" />
+    <table id="9" parent="1" name="auth_group" />
+    <table id="10" parent="1" name="auth_group_permissions" />
+    <table id="11" parent="1" name="auth_permission" />
+    <table id="12" parent="1" name="auth_user" />
+    <table id="13" parent="1" name="auth_user_groups" />
+    <table id="14" parent="1" name="auth_user_user_permissions" />
+    <table id="15" parent="1" name="django_admin_log" />
+    <table id="16" parent="1" name="django_content_type" />
+    <table id="17" parent="1" name="django_migrations" />
+    <table id="18" parent="1" name="django_session" />
+    <table id="19" parent="5" name="pma__bookmark">
+      <comment>Bookmarks</comment>
+    </table>
+    <table id="20" parent="5" name="pma__central_columns">
+      <comment>Central list of columns</comment>
+    </table>
+    <table id="21" parent="5" name="pma__column_info">
+      <comment>Column information for phpMyAdmin</comment>
+    </table>
+    <table id="22" parent="5" name="pma__designer_coords">
+      <comment>Table coordinates for Designer</comment>
+    </table>
+    <table id="23" parent="5" name="pma__designer_settings">
+      <comment>Settings related to Designer</comment>
+    </table>
+    <table id="24" parent="5" name="pma__export_templates">
+      <comment>Saved export templates</comment>
+    </table>
+    <table id="25" parent="5" name="pma__favorite">
+      <comment>Favorite tables</comment>
+    </table>
+    <table id="26" parent="5" name="pma__history">
+      <comment>SQL history for phpMyAdmin</comment>
+    </table>
+    <table id="27" parent="5" name="pma__navigationhiding">
+      <comment>Hidden items of navigation tree</comment>
+    </table>
+    <table id="28" parent="5" name="pma__pdf_pages">
+      <comment>PDF relation pages for phpMyAdmin</comment>
+    </table>
+    <table id="29" parent="5" name="pma__recent">
+      <comment>Recently accessed tables</comment>
+    </table>
+    <table id="30" parent="5" name="pma__relation">
+      <comment>Relation table</comment>
+    </table>
+    <table id="31" parent="5" name="pma__savedsearches">
+      <comment>Saved searches</comment>
+    </table>
+    <table id="32" parent="5" name="pma__table_coords">
+      <comment>Table coordinates for phpMyAdmin PDF output</comment>
+    </table>
+    <table id="33" parent="5" name="pma__table_info">
+      <comment>Table information for phpMyAdmin</comment>
+    </table>
+    <table id="34" parent="5" name="pma__table_uiprefs">
+      <comment>Tables' UI preferences</comment>
+    </table>
+    <table id="35" parent="5" name="pma__tracking">
+      <comment>Database changes tracking for phpMyAdmin</comment>
+    </table>
+    <table id="36" parent="5" name="pma__userconfig">
+      <comment>User preferences storage for phpMyAdmin</comment>
+    </table>
+    <table id="37" parent="5" name="pma__usergroups">
+      <comment>User groups with configured menu items</comment>
+    </table>
+    <table id="38" parent="5" name="pma__users">
+      <comment>Users and their assignments to user groups</comment>
+    </table>
+    <column id="39" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="40" parent="9" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <index id="41" parent="9" name="name">
+      <columns>name</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="42" parent="9" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="43" parent="9" name="name">
+      <columns>name</columns>
+      <underlying-index>name</underlying-index>
+    </key>
+    <column id="44" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="45" parent="10" name="group_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="46" parent="10" name="permission_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="47" parent="10" name="auth_group_permissions_group_id_0cd325b0_uniq">
+      <columns>group_id
+permission_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="48" parent="10" name="auth_group_permissi_permission_id_84c5c92e_fk_auth_permission_id">
+      <columns>permission_id</columns>
+      <desc-columns />
+    </index>
+    <key id="49" parent="10" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="50" parent="10" name="auth_group_permissions_group_id_0cd325b0_uniq">
+      <columns>group_id
+permission_id</columns>
+      <underlying-index>auth_group_permissions_group_id_0cd325b0_uniq</underlying-index>
+    </key>
+    <foreign-key id="51" parent="10" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
+      <columns>group_id</columns>
+      <ref-key>~.auth_group.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="52" parent="10" name="auth_group_permissi_permission_id_84c5c92e_fk_auth_permission_id">
+      <columns>permission_id</columns>
+      <ref-key>~.auth_permission.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="53" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="54" parent="11" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="55" parent="11" name="content_type_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="56" parent="11" name="codename">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="57" parent="11" name="auth_permission_content_type_id_01ab375a_uniq">
+      <columns>content_type_id
+codename</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="58" parent="11" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="59" parent="11" name="auth_permission_content_type_id_01ab375a_uniq">
+      <columns>content_type_id
+codename</columns>
+      <underlying-index>auth_permission_content_type_id_01ab375a_uniq</underlying-index>
+    </key>
+    <foreign-key id="60" parent="11" name="auth_permissi_content_type_id_2f476e4b_fk_django_content_type_id">
+      <columns>content_type_id</columns>
+      <ref-key>~.django_content_type.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="61" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="62" parent="12" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(128)|0</data-type>
+    </column>
+    <column id="63" parent="12" name="last_login">
+      <data-type>datetime(6)|0</data-type>
+    </column>
+    <column id="64" parent="12" name="is_superuser">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="65" parent="12" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(150)|0</data-type>
+    </column>
+    <column id="66" parent="12" name="first_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="67" parent="12" name="last_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="68" parent="12" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(254)|0</data-type>
+    </column>
+    <column id="69" parent="12" name="is_staff">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="70" parent="12" name="is_active">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="71" parent="12" name="date_joined">
+      <mandatory>1</mandatory>
+      <data-type>datetime(6)|0</data-type>
+    </column>
+    <index id="72" parent="12" name="username">
+      <columns>username</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="73" parent="12" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="74" parent="12" name="username">
+      <columns>username</columns>
+      <underlying-index>username</underlying-index>
+    </key>
+    <column id="75" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="76" parent="13" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="77" parent="13" name="group_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="78" parent="13" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
+      <columns>group_id</columns>
+      <desc-columns />
+    </index>
+    <index id="79" parent="13" name="auth_user_groups_user_id_94350c0c_uniq">
+      <columns>user_id
+group_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="80" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="81" parent="13" name="auth_user_groups_user_id_94350c0c_uniq">
+      <columns>user_id
+group_id</columns>
+      <underlying-index>auth_user_groups_user_id_94350c0c_uniq</underlying-index>
+    </key>
+    <foreign-key id="82" parent="13" name="auth_user_groups_user_id_6a12ed8b_fk_auth_user_id">
+      <columns>user_id</columns>
+      <ref-key>~.auth_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="83" parent="13" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
+      <columns>group_id</columns>
+      <ref-key>~.auth_group.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="84" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="85" parent="14" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="86" parent="14" name="permission_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="87" parent="14" name="auth_user_user_permissions_user_id_14a6b632_uniq">
+      <columns>user_id
+permission_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <index id="88" parent="14" name="auth_user_user_perm_permission_id_1fbb5f2c_fk_auth_permission_id">
+      <columns>permission_id</columns>
+      <desc-columns />
+    </index>
+    <key id="89" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="90" parent="14" name="auth_user_user_permissions_user_id_14a6b632_uniq">
+      <columns>user_id
+permission_id</columns>
+      <underlying-index>auth_user_user_permissions_user_id_14a6b632_uniq</underlying-index>
+    </key>
+    <foreign-key id="91" parent="14" name="auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id">
+      <columns>user_id</columns>
+      <ref-key>~.auth_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="92" parent="14" name="auth_user_user_perm_permission_id_1fbb5f2c_fk_auth_permission_id">
+      <columns>permission_id</columns>
+      <ref-key>~.auth_permission.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="93" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="94" parent="15" name="action_time">
+      <mandatory>1</mandatory>
+      <data-type>datetime(6)|0</data-type>
+    </column>
+    <column id="95" parent="15" name="object_id">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="96" parent="15" name="object_repr">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="97" parent="15" name="action_flag">
+      <mandatory>1</mandatory>
+      <data-type>smallint(5) unsigned|0</data-type>
+    </column>
+    <column id="98" parent="15" name="change_message">
+      <mandatory>1</mandatory>
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="99" parent="15" name="content_type_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="100" parent="15" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="101" parent="15" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
+      <columns>user_id</columns>
+      <desc-columns />
+    </index>
+    <index id="102" parent="15" name="django_admin__content_type_id_c4bce8eb_fk_django_content_type_id">
+      <columns>content_type_id</columns>
+      <desc-columns />
+    </index>
+    <key id="103" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="104" parent="15" name="django_admin__content_type_id_c4bce8eb_fk_django_content_type_id">
+      <columns>content_type_id</columns>
+      <ref-key>~.django_content_type.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="105" parent="15" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
+      <columns>user_id</columns>
+      <ref-key>~.auth_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="106" parent="16" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="107" parent="16" name="app_label">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="108" parent="16" name="model">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="109" parent="16" name="django_content_type_app_label_76bd3d3b_uniq">
+      <columns>app_label
+model</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="110" parent="16" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="111" parent="16" name="django_content_type_app_label_76bd3d3b_uniq">
+      <columns>app_label
+model</columns>
+      <underlying-index>django_content_type_app_label_76bd3d3b_uniq</underlying-index>
+    </key>
+    <column id="112" parent="17" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="113" parent="17" name="app">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="114" parent="17" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="115" parent="17" name="applied">
+      <mandatory>1</mandatory>
+      <data-type>datetime(6)|0</data-type>
+    </column>
+    <key id="116" parent="17" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="117" parent="18" name="session_key">
+      <mandatory>1</mandatory>
+      <data-type>varchar(40)|0</data-type>
+    </column>
+    <column id="118" parent="18" name="session_data">
+      <mandatory>1</mandatory>
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="119" parent="18" name="expire_date">
+      <mandatory>1</mandatory>
+      <data-type>datetime(6)|0</data-type>
+    </column>
+    <index id="120" parent="18" name="django_session_de54fa62">
+      <columns>expire_date</columns>
+      <desc-columns />
+    </index>
+    <key id="121" parent="18" name="PRIMARY">
+      <columns>session_key</columns>
+      <primary>1</primary>
+    </key>
+    <column id="122" parent="19" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="123" parent="19" name="dbase">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="124" parent="19" name="user">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="125" parent="19" name="label">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="126" parent="19" name="query">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <key id="127" parent="19" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="128" parent="20" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="129" parent="20" name="col_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="130" parent="20" name="col_type">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="131" parent="20" name="col_length">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="132" parent="20" name="col_collation">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="133" parent="20" name="col_isNull">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="134" parent="20" name="col_extra">
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="135" parent="20" name="col_default">
+      <data-type>text|0</data-type>
+    </column>
+    <key id="136" parent="20" name="PRIMARY">
+      <columns>db_name
+col_name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="137" parent="21" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(5) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="138" parent="21" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="139" parent="21" name="table_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="140" parent="21" name="column_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="141" parent="21" name="comment">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="142" parent="21" name="mimetype">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="143" parent="21" name="transformation">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="144" parent="21" name="transformation_options">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="145" parent="21" name="input_transformation">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="146" parent="21" name="input_transformation_options">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <index id="147" parent="21" name="db_name">
+      <columns>db_name
+table_name
+column_name</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="148" parent="21" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="149" parent="21" name="db_name">
+      <columns>db_name
+table_name
+column_name</columns>
+      <underlying-index>db_name</underlying-index>
+    </key>
+    <column id="150" parent="22" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="151" parent="22" name="table_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="152" parent="22" name="x">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="153" parent="22" name="y">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="154" parent="22" name="v">
+      <data-type>tinyint(4)|0</data-type>
+    </column>
+    <column id="155" parent="22" name="h">
+      <data-type>tinyint(4)|0</data-type>
+    </column>
+    <key id="156" parent="22" name="PRIMARY">
+      <columns>db_name
+table_name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="157" parent="23" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="158" parent="23" name="settings_data">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <key id="159" parent="23" name="PRIMARY">
+      <columns>username</columns>
+      <primary>1</primary>
+    </key>
+    <column id="160" parent="24" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(5) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="161" parent="24" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="162" parent="24" name="export_type">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="163" parent="24" name="template_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="164" parent="24" name="template_data">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <index id="165" parent="24" name="u_user_type_template">
+      <columns>username
+export_type
+template_name</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="166" parent="24" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="167" parent="24" name="u_user_type_template">
+      <columns>username
+export_type
+template_name</columns>
+      <underlying-index>u_user_type_template</underlying-index>
+    </key>
+    <column id="168" parent="25" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="169" parent="25" name="tables">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <key id="170" parent="25" name="PRIMARY">
+      <columns>username</columns>
+      <primary>1</primary>
+    </key>
+    <column id="171" parent="26" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="172" parent="26" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="173" parent="26" name="db">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="174" parent="26" name="table">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="175" parent="26" name="timevalue">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="176" parent="26" name="sqlquery">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <index id="177" parent="26" name="username">
+      <columns>username
+db
+table
+timevalue</columns>
+      <desc-columns />
+    </index>
+    <key id="178" parent="26" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="179" parent="27" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="180" parent="27" name="item_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="181" parent="27" name="item_type">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="182" parent="27" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="183" parent="27" name="table_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <key id="184" parent="27" name="PRIMARY">
+      <columns>username
+item_name
+item_type
+db_name
+table_name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="185" parent="28" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="186" parent="28" name="page_nr">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="187" parent="28" name="page_descr">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <index id="188" parent="28" name="db_name">
+      <columns>db_name</columns>
+      <desc-columns />
+    </index>
+    <key id="189" parent="28" name="PRIMARY">
+      <columns>page_nr</columns>
+      <primary>1</primary>
+    </key>
+    <column id="190" parent="29" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="191" parent="29" name="tables">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <key id="192" parent="29" name="PRIMARY">
+      <columns>username</columns>
+      <primary>1</primary>
+    </key>
+    <column id="193" parent="30" name="master_db">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="194" parent="30" name="master_table">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="195" parent="30" name="master_field">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="196" parent="30" name="foreign_db">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="197" parent="30" name="foreign_table">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="198" parent="30" name="foreign_field">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <index id="199" parent="30" name="foreign_field">
+      <columns>foreign_db
+foreign_table</columns>
+      <desc-columns />
+    </index>
+    <key id="200" parent="30" name="PRIMARY">
+      <columns>master_db
+master_table
+master_field</columns>
+      <primary>1</primary>
+    </key>
+    <column id="201" parent="31" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(5) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="202" parent="31" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="203" parent="31" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="204" parent="31" name="search_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="205" parent="31" name="search_data">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <index id="206" parent="31" name="u_savedsearches_username_dbname">
+      <columns>username
+db_name
+search_name</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="207" parent="31" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="208" parent="31" name="u_savedsearches_username_dbname">
+      <columns>username
+db_name
+search_name</columns>
+      <underlying-index>u_savedsearches_username_dbname</underlying-index>
+    </key>
+    <column id="209" parent="32" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="210" parent="32" name="table_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="211" parent="32" name="pdf_page_number">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <column id="212" parent="32" name="x">
+      <mandatory>1</mandatory>
+      <data-type>float unsigned|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <column id="213" parent="32" name="y">
+      <mandatory>1</mandatory>
+      <data-type>float unsigned|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <key id="214" parent="32" name="PRIMARY">
+      <columns>db_name
+table_name
+pdf_page_number</columns>
+      <primary>1</primary>
+    </key>
+    <column id="215" parent="33" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="216" parent="33" name="table_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="217" parent="33" name="display_field">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <key id="218" parent="33" name="PRIMARY">
+      <columns>db_name
+table_name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="219" parent="34" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="220" parent="34" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="221" parent="34" name="table_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="222" parent="34" name="prefs">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="223" parent="34" name="last_update">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <key id="224" parent="34" name="PRIMARY">
+      <columns>username
+db_name
+table_name</columns>
+      <primary>1</primary>
+    </key>
+    <column id="225" parent="35" name="db_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="226" parent="35" name="table_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="227" parent="35" name="version">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+    </column>
+    <column id="228" parent="35" name="date_created">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="229" parent="35" name="date_updated">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="230" parent="35" name="schema_snapshot">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="231" parent="35" name="schema_sql">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="232" parent="35" name="data_sql">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="233" parent="35" name="tracking">
+      <data-type>set('UPDATE', 'REPLACE', 'INSERT', 'DELETE', 'TRUNCATE', 'CREATE DATABASE', 'ALTER DATABASE', 'DROP DATABASE', 'CREATE TABLE', 'ALTER TABLE', 'RENAME TABLE', 'DROP TABLE', 'CREATE INDEX', 'DROP INDEX', 'CREATE VIEW', 'ALTER VIEW', 'DROP VIEW')|0</data-type>
+    </column>
+    <column id="234" parent="35" name="tracking_active">
+      <mandatory>1</mandatory>
+      <data-type>int(1) unsigned|0</data-type>
+      <default-expression>'1'</default-expression>
+    </column>
+    <key id="235" parent="35" name="PRIMARY">
+      <columns>db_name
+table_name
+version</columns>
+      <primary>1</primary>
+    </key>
+    <column id="236" parent="36" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="237" parent="36" name="timevalue">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="238" parent="36" name="config_data">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <key id="239" parent="36" name="PRIMARY">
+      <columns>username</columns>
+      <primary>1</primary>
+    </key>
+    <column id="240" parent="37" name="usergroup">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="241" parent="37" name="tab">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="242" parent="37" name="allowed">
+      <mandatory>1</mandatory>
+      <data-type>enum('Y', 'N')|0</data-type>
+      <default-expression>'N'</default-expression>
+    </column>
+    <key id="243" parent="37" name="PRIMARY">
+      <columns>usergroup
+tab
+allowed</columns>
+      <primary>1</primary>
+    </key>
+    <column id="244" parent="38" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <column id="245" parent="38" name="usergroup">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <key id="246" parent="38" name="PRIMARY">
+      <columns>username
+usergroup</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
